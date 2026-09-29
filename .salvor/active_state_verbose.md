@@ -906,10 +906,11 @@ Checks:
 
 Version: `plugin.json` and the marketplace `metadata.version` move from 0.1.0 to
 0.1.1. Claude Code caches installed plugins in a folder named after the version
-(`~/.claude/plugins/cache/salvor/salvor/0.1.0/`). The Serena process of a live
-0.1.0 install on this machine still ran the old arguments with
-`--project /home/<user>`, so without the bump an existing install would keep the
-old launch.
+(`~/.claude/plugins/cache/salvor/salvor/0.1.0/`), so the bump is the safe way to
+make existing installs pick up the new launch. (Not verified: whether an update
+without a bump would already do so. A directory marketplace served skills from
+its source folder in our Windows test.) The Serena process of a live 0.1.0
+install on this machine ran the old arguments with `--project /home/<user>`.
 
 Regression: `tests/claude-plugin-mcp.test.mjs` has 4 tests:
 - the exact PyPI pin

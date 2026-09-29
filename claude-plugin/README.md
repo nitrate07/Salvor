@@ -34,8 +34,8 @@ wraps it in slash commands and bundles the two MCP servers.
   home folder that isn't inside a repository still binds to your home folder.
   Remove only that one file, because `~/.serena/` also
   holds Serena's global `serena_config.yml`. Optionally, also delete the
-  home-folder entry under `projects:` in that config. The plugin version is
-  0.1.1, so updating the plugin replaces the cached 0.1.0 launch settings.
+  home-folder entry under `projects:` in that config. This fix ships as plugin
+  version 0.1.1; update the plugin so the new launch settings are used.
 - **Files it creates.** On first start in a repository, Serena writes `.serena/`
   (`project.yml`, `memories/`, and its own `.gitignore` for `cache/` and
   `project.local.yml`). Salvor's setup treats `.serena/memories/` as committed, so

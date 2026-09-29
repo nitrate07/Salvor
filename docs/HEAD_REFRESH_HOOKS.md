@@ -11,8 +11,10 @@ start. If HEAD moves while the session is still running, that context is stale, 
 so is any GitNexus index. HEAD can be moved by the agent itself, by a teammate in
 another terminal, or by an IDE. The moves that matter are a branch switch, a pull,
 merge, rebase or amend, and `reset --hard`. The refresh procedure is the one in #6:
-re-read the hub, spoke and L1, run the §10.2 post-pull Brain Reconcile if `.salvor/`
-changed, and run `gitnexus analyze --index-only` before relying on impact analysis.
+re-read the hub, spoke and L1; run the §10.2 post-pull Brain Reconcile if the move
+touched a §10.2 brain surface (`.salvor/`, `VERSION.md`, `RULES.md`,
+`.serena/memories/`); and run `gitnexus analyze --index-only` before relying on
+impact analysis.
 
 This integration automates the *signal*, not the refresh:
 
@@ -121,7 +123,7 @@ marker="$(git rev-parse --git-dir 2>/dev/null)/salvor-head-moved"
 [ -s "$marker" ] || exit 0
 moves=$(tr '\n' ';' < "$marker")
 rm -f "$marker"
-printf '%s\n' "HEAD moved since the last turn ($moves). Before continuing: re-read the CLAUDE.md hub, the relevant component spoke and .salvor/active_state.md; if .salvor/ changed, run the RULES.md §10.2 post-pull Brain Reconcile; if GitNexus is in use, run gitnexus analyze --index-only before any impact-analysis claim."
+printf '%s\n' "HEAD moved since the last turn ($moves). Before continuing: re-read the CLAUDE.md hub, the relevant component spoke and .salvor/active_state.md; if the move touched .salvor/, VERSION.md, RULES.md or .serena/memories/, run the RULES.md §10.2 post-pull Brain Reconcile; if GitNexus is in use, run gitnexus analyze --index-only before any impact-analysis claim."
 exit 0
 ```
 

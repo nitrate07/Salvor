@@ -894,3 +894,9 @@ public version remains v1.0.0-beta. L1 RELEASE GATE re-synthesized to the
 promoted state; `dev` retained as the persistent integration branch. Full main
 source-tree validation and clean-extracted release-ZIP verification recorded in
 the promotion merge commit.
+- 2026-09-29 follow-up: the reconcile trigger in both the prose and the adapter
+  note now names every §10.2 brain surface (`.salvor/`, `VERSION.md`,
+  `RULES.md`, `.serena/memories/`), not just `.salvor/`. This matches the §10.2
+  post-pull trigger and the surface list @alituzun proposed for the Core
+  fingerprint rule in #6. I re-ran the adapter live: the note arrived with the
+  new wording and the marker was deleted.
